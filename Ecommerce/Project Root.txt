@@ -1,0 +1,22 @@
+ecommerce_project/
+│
+├── src/
+│   └── main/
+│       └── java/
+│           └── com/
+│               └── ecommerce/
+│                   ├── DBUtil.java
+│                   ├── User.java
+│                   ├── Product.java
+│                   ├── Order.java
+│                   ├── CartItem.java
+│                   ├── CartServlet.java
+│                   ├── OrderServlet.java
+│                   └── LoginAjaxServlet.java
+│
+├── webapp/
+│   ├── login.jsp
+│   ├── cart.jsp
+│   └── orderConfirmation.jsp
+│
+└── style.css (optional CSS file)

@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+<head>
+    <title>Login</title>
+    <script>
+        function loginAjax() {
+            var xhr = new XMLHttpRequest();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            xhr.open("POST", "login-ajax", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.status === "success") {
+                        alert("Login successful!");
+                        window.location.href = "products.jsp";
+                    } else {
+                        alert("Invalid credentials.");
+                    }
+                }
+            };
+
+            xhr.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
+        }
+    </script>
+</head>
+<body>
+    <h1>Login</h1>
+    <form onsubmit="event.preventDefault(); loginAjax();">
+        <label>Username:</label>
+        <input type="text" id="username" required><br>
+        <label>Password:</label>
+        <input type="password" id="password" required><br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

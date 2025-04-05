@@ -1,0 +1,10 @@
+-- Sample Users
+INSERT INTO users (username, password) VALUES
+('alice', 'alice123'),
+('bob', 'bob123');
+
+-- Sample Products
+INSERT INTO products (name, description, price) VALUES
+('Laptop', 'A powerful laptop with 16GB RAM', 999.99),
+('Smartphone', 'Latest Android phone with OLED display', 599.99),
+('Headphones', 'Noise-cancelling over-ear headphones', 199.99);
